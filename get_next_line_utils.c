@@ -6,7 +6,7 @@
 /*   By: mballet <mballet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 14:59:32 by mballet           #+#    #+#             */
-/*   Updated: 2021/01/13 11:46:59 by mballet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 15:41:18 by mballet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	*ft_strjoin(char *s1, char *s2)
 			tab[i++] = s2[j++];
 		tab[i] = '\0';
 	}
+	if (s1)
+		free(s1);
 	return (tab);
 }
 

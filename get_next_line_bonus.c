@@ -6,7 +6,7 @@
 /*   By: mballet <mballet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 14:12:30 by mballet           #+#    #+#             */
-/*   Updated: 2021/01/12 12:20:04 by mballet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 14:21:57 by mballet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,15 @@ int		reset_temp(char **temp, int read_return)
 		i++;
 	if (*temp)
 		free(*temp);
-	if (!((*temp) = malloc(sizeof(char) * (read_return - i))))
+	if (!((*temp) = malloc(sizeof(char) * (read_return - i + 1))))
 		return (-1);
 	a = 0;
 	i++;
 	while (i < read_return)
 		(*temp)[a++] = str[i++];
 	(*temp)[a] = '\0';
+	if (str)
+		free(str);
 	return (1);
 }
 
@@ -41,6 +43,8 @@ int		fill_in_line(char **temp, ssize_t read_return, char **line)
 
 	if (read_return == 0)
 	{
+		if ((*line))
+			free(*line);
 		(*line) = ft_strdup(*temp);
 		return (1);
 	}
