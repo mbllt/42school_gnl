@@ -6,7 +6,7 @@
 /*   By: mballet <mballet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 14:12:30 by mballet           #+#    #+#             */
-/*   Updated: 2021/01/13 14:21:57 by mballet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 16:19:38 by mballet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int		fill_in_line(char **temp, ssize_t read_return, char **line)
 	int i;
 	int a;
 
+	if ((*line))
+		free(*line);
 	if (read_return == 0)
 	{
-		if ((*line))
-			free(*line);
 		(*line) = ft_strdup(*temp);
 		return (1);
 	}

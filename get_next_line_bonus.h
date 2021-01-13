@@ -6,7 +6,7 @@
 /*   By: mballet <mballet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 15:01:40 by mballet           #+#    #+#             */
-/*   Updated: 2021/01/12 12:09:50 by mballet          ###   ########lyon.fr   */
+/*   Updated: 2021/01/13 16:09:46 by mballet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <limits.h>
 
 int		get_next_line(int fd, char **line);
 int		condition_fill_in_temp(char **temp);
