@@ -6,7 +6,7 @@
 /*   By: mballet <mballet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 14:59:32 by mballet           #+#    #+#             */
-/*   Updated: 2021/01/13 15:41:18 by mballet          ###   ########lyon.fr   */
+/*   Updated: 2021/03/01 09:10:08 by mballet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,8 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1)
 		tab = ft_strdup(s2);
-	if (s2[0] == '\0')
-	{
-		if (!(tab = malloc(sizeof(char) * 1)))
-			return (NULL);
-		return ((tab[0] = '\0') ? tab : tab);
-	}
+	if (s2[0] == '\0' && (tab = malloc(sizeof(char) * 1)))
+		return (!(tab) ? NULL : tab);
 	if (s1 && s2)
 	{
 		if (!(tab = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
